@@ -9,9 +9,13 @@ import FoodBox from './components/FoodBox';
 function App() {
   const [foodList, setFoodList] = useState(foods);
 
+  const addNewFood = (food) => {
+    setFoodList([...foodList, food]);
+  };
+
   return (
     <div className="App">
-      <AddNewFood />
+      {<AddNewFood addNewFood={addNewFood} />}
 
       <Button> Hide Form / Add New Food </Button>
 
